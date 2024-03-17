@@ -42,7 +42,7 @@ if calculation == "investment":
             # Print the total amount paid - always uses 2 decimal places and this is denominated in GBP - Pounds and Pence
             print("The total amount assuming simple interest is: $", "{0:.2f}".format(total_amount))
             
-            # breaks from loop if valid selection made
+            
             break
 
         elif interest == "compound":
