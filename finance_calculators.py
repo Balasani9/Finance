@@ -28,7 +28,7 @@ while True:
 # investement computation
 if calculation == "investment": 
     #asking user to input relevant financial information
-    money_investment = float(input ("How much money are you depositing (£)?\t"))
+    money_investment = float(input ("How much money are you depositing ($)?\t"))
     interest_investment = float(input ("What is the assumed interest rate per annum (exclude % symbol)?\t"))/100
     investment_term = float(input ("How many years will you be investing for?\t"))
 
@@ -40,7 +40,7 @@ if calculation == "investment":
             total_amount = money_investment * (1 + interest_investment*investment_term)
       
             # Print the total amount paid - always uses 2 decimal places and this is denominated in GBP - Pounds and Pence
-            print("The total amount assuming simple interest is: £", "{0:.2f}".format(total_amount))
+            print("The total amount assuming simple interest is: $", "{0:.2f}".format(total_amount))
             
             # breaks from loop if valid selection made
             break
@@ -49,7 +49,7 @@ if calculation == "investment":
             total_amount = money_investment * math.pow((1 + interest_investment),investment_term)
        
             # Print the total amount paid - always uses 2 decimal places and this is denominated in GBP - Pounds and Pence
-            print("The total amount assuming compound interest is: £", "{0:.2f}".format(total_amount))
+            print("The total amount assuming compound interest is: $", "{0:.2f}".format(total_amount))
             break
 
         # if neither compound nor simple are selected prints an error message and asks again in the while loop
@@ -60,7 +60,7 @@ if calculation == "investment":
 elif calculation == "bond":
     
     # Value of house is a float, although most likely to be an integer
-    home_value = float(input("What is the current value of the house (£)?  "))
+    home_value = float(input("What is the current value of the house ($)?  "))
     
     # annual interest rate is converted to monthly / decimal amount
     interest_bond = float(input("What is the annual interest rate (exclude % symbol)?  "))/(100 * 12)
@@ -72,5 +72,5 @@ elif calculation == "bond":
     monthly_repayment = (interest_bond * home_value)/(1 - (1 + interest_bond)**(-term_months))
     
     # Print the monthly repayment - always uses 2 decimal places and this is denominated in GBP - Pounds and Pence
-    print("Your monthly repayment will be: £", "{0:.2f}".format(monthly_repayment))
+    print("Your monthly repayment will be: $", "{0:.2f}".format(monthly_repayment))
 
